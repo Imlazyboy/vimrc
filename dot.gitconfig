@@ -1,0 +1,19 @@
+[http]
+	postBuffer = 524288000
+[user]
+	email = zhuguangjun2002@163.com
+	name = zhuguangjun2002
+	signingkey = 0AA30B87778188A7
+[color]
+	ui = auto
+[push]
+	default = simple
+[gpg]
+	program = gpg2
+[commit]
+	gpgsign = true
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
