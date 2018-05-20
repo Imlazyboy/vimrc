@@ -149,8 +149,8 @@ Plugin 'scrooloose/nerdcommenter'   " commenter: \cc \cu
 " ag: Silver Searcher
 Plugin 'mileszs/ack.vim'
 let g:ackprg = 'ag --nogroup --nocolor --column'
-" 在普通模式下输入Ctrl+U便可以自动输入`:Ack`
-map <c-u> :Ack<space>
+" 在普通模式下输入F4,便可以自动输入`:Ack`
+map <F4> :Ack<space>
 
 " vim-unimpaired
 Plugin 'tpope/vim-unimpaired'
