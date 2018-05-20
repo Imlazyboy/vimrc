@@ -82,8 +82,8 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 "Ctrl+N 打开/关闭
 map <C-n> :NERDTreeToggle<CR>
 " 当不带参数打开Vim时自动加载项目树
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+"autocmd StdinReadPre * let s:std_in=1
+"autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 " 当所有文件关闭时关闭项目树窗格
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 "不显示这些文件
@@ -101,7 +101,7 @@ Plugin 'kien/ctrlp.vim'
 " 后按下C-P，便可以全局搜索啦。使用C-j,
 " C-k上下翻页，<Enter>打开选中文件。同样，给出一些有用的配置：
 let g:ctrlp_working_path_mode = 'ra'
-set wildignore+=*/tmp/*,*/node_modules/*,*.so,*.swp,*.zip     
+set wildignore+=*/tmp/*,*/node_modules/*,*.so,*.swp,*.zip,*.pyc
 let g:ctrlp_custom_ignore = {'dir':  '\v[\/]\.(git|hg|svn)$', 'file': '\v\.(exe|so|dll)$'}
 
 
@@ -144,3 +144,14 @@ set showmode
 Plugin 'scrooloose/nerdcommenter'   " commenter: \cc \cu
 "然后按下\cc来注释当前航，\cu来反注释，\c<space>来切换注释。其中的\\是可以设置的：
 "let mapleader=';'
+
+" 
+" ag: Silver Searcher
+Plugin 'mileszs/ack.vim'
+let g:ackprg = 'ag --nogroup --nocolor --column'
+" 在普通模式下输入Ctrl+U便可以自动输入`:Ack`
+map <c-u> :Ack<space>
+
+" vim-unimpaired
+Plugin 'tpope/vim-unimpaired'
+
