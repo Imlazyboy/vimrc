@@ -26,8 +26,8 @@ cd ~/.vim/bundle/YouCompleteMe
 ./install.py --all
 
 
-## 安装ctags
-sudo apt-get install ctags
+## 安装 exuberant-ctags
+sudo apt-get install exuberant-ctags
 
 # 安装vim8
 sudo add-apt-repository ppa:jonathonf/vim
