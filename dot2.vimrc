@@ -102,7 +102,8 @@ Plugin 'kien/ctrlp.vim'
 " C-k上下翻页，<Enter>打开选中文件。同样，给出一些有用的配置：
 let g:ctrlp_working_path_mode = 'ra'
 set wildignore+=*/tmp/*,*/node_modules/*,*.so,*.swp,*.zip,*.pyc
-let g:ctrlp_custom_ignore = {'dir':  '\v[\/]\.(git|hg|svn)$', 'file': '\v\.(exe|so|dll)$'}
+"let g:ctrlp_custom_ignore = {'dir':  '\v[\/]\.(git|hg|svn)$', 'file': '\v\.(exe|so|dll)$'}
+let g:ctrlp_custom_ignore = {'dir':  '\v[\/]\.(git|hg|svn)$', 'file': '\v\.(exe|so|dll|jpg|png|jpeg)$'}
 
 
 
@@ -220,4 +221,15 @@ let g:tagbar_ctags_bin='ctags'          "ctags程序的路径
 let g:tagbar_width=30                   "窗口宽度的设置
 map <F3> :Tagbar<CR>
 "autocmd BufReadPost *.cpp,*.c,*.h,*.hpp,*.cc,*.cxx call tagbar#autoopen() "如果是c语言的程序的话，tagbar自动开启
-autocmd BufReadPost *.py call tagbar#autoopen() "如果是python语言的程序的话，tagbar自动开启
+"autocmd BufReadPost *.py call tagbar#autoopen() "如果是python语言的程序的话，tagbar自动开启
+
+" ctrlsf
+Plugin 'dyng/ctrlsf.vim'
+nmap     <C-F>f <Plug>CtrlSFPrompt
+vmap     <C-F>f <Plug>CtrlSFVwordPath
+vmap     <C-F>F <Plug>CtrlSFVwordExec
+nmap     <C-F>n <Plug>CtrlSFCwordPath
+nmap     <C-F>p <Plug>CtrlSFPwordPath
+nnoremap <C-F>o :CtrlSFOpen<CR>
+nnoremap <C-F>t :CtrlSFToggle<CR>
+inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
