@@ -314,8 +314,8 @@ let g:autoformat_remove_trailing_spaces = 0
 " 定义`Python`的`代码``格式化程序`
 " autopep8 for Python (supports formatting ranges)
 " For Ubuntu type sudo apt-get install python-autopep8 in a terminal. 
-let g:formatdef_autopep8 = "'autopep8 - --range '.a:firstline.' '.a:lastline"
-let g:formatters_python = ['autopep8']
+"let g:formatdef_autopep8 = "'autopep8 - --range '.a:firstline.' '.a:lastline"
+"let g:formatters_python = ['autopep8']
 
 
 " Mappings 
