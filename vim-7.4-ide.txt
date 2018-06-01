@@ -1,0 +1,12 @@
+1. "支持UTF-8编码
+2. "分割布局（Split Layouts)
+3. "代码折叠（Code Folding）
+   空格就能搞定
+4. "Python代码缩进
+5. "自动缩进
+   缩进错误的，用红色标识出来。
+6. "自动格式化程序
+  F6-使用了插件：`vim-autoformat`+外部程序`autopep8`
+7. "配色方案
+8. `indentLine`--`缩进指示线`
+
