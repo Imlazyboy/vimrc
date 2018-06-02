@@ -1,3 +1,7 @@
+# vim
+# 需要安装`Vundle`安装包
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
 # 安装ag
 sudo  apt-get install silversearcher-ag
 # 安装 powerline字体库
