@@ -18,6 +18,7 @@ call plug#begin(g:plugged_home)
   " Search 
   Plug 'wsdjeg/FlyGrep.vim'  " awesome grep on the fly
   Plug 'kien/ctrlp.vim'  " fuzzy search files
+  Plug 'mileszs/ack.vim' " ag search
   " Impsort Sort
   Plug 'tweekmonster/impsort.vim'  " color and sort pythonImportedClassDef
   " Autocomplete
@@ -35,13 +36,17 @@ call plug#begin(g:plugged_home)
   Plug 'tpope/vim-commentary'  "comment-out by gc
   " Language 
   Plug 'davidhalter/jedi-vim'   " jedi for python
+  " vue
+  Plug 'posva/vim-vue'
 
 call plug#end()
 
 " path to your python
 "let g:python3_host_prog = '/usr/bin/python3'
 "let g:python_host_prog = '/usr/bin/python2'
-let g:python3_host_prog = '/home/user/project/workshop/py3env/bin/python3'
+"let g:python_host_prog = '/home/user/pyenv/neovim2/bin/python2'
+"let g:python3_host_prog = '/home/user/pyenv/neovim3/bin/python3'
+let g:python3_host_prog = '/home/user/project/workshop/py35env/bin/python3'
 
 
 filetype plugin indent on
@@ -96,7 +101,8 @@ set lbr  " wrap words
 set nowrap  " i turn on wrap manually when needed
 
 " vim-autoformat
-noremap <F3> :Autoformat<CR>
+" 格式化
+"noremap <F3> :Autoformat<CR>
 
 set scrolloff=3 " keep three lines between the cursor and the edge of the screen
 
@@ -327,14 +333,9 @@ let g:gitgutter_map_keys = 0
 let g:ctrlp_custom_ignore = '\v\.(npy|jpg|pyc|so|dll)$'
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
-" Add the virtualenv's site-packages to vim path
-if has('python3')
-py << EOF
-import os.path
-import sys
-import vim
-if 'VIRTUAL_ENV' in os.environ:
-    project_base_dir = os.environ['VIRTUAL_ENV']
-    sys.path.insert(0, os.path.join(project_base_dir, 'lib', 'python%d.%d' % sys.version_info[:2], 'site-packages'))
-EOF
-endif
+"Plugin 'mileszs/ack.vim'
+"使用ag搜索
+let g:ackprg = 'ag --nogroup --nocolor --column'
+" 在普通模式下输入`F4`,便可以自动输入`:Ack`
+map <F4> :Ack<space>
+
