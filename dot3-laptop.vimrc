@@ -241,12 +241,12 @@ Plugin 'honza/vim-snippets'
 
 "YCM server interpreter
 "let g:ycm_server_python_interpreter='/usr/bin/python3'
-let g:ycm_server_python_interpreter='/home/user/project/workshop/py3env/bin/python3'
+let g:ycm_server_python_interpreter='/home/user/project/workshop/py35env/bin/python3'
 
 " YCM python interpreter
 " Global setting way
-let g:ycm_python_interpreter_path = '/home/user/project/workshop/py3env/bin/python3'
-let g:ycm_python_sys_path = ['/home/user/project/workshop/py3env/lib/python3.5/site-packages']
+let g:ycm_python_interpreter_path = '/home/user/project/workshop/py35env/bin/python3'
+let g:ycm_python_sys_path = ['/home/user/project/workshop/py35env/lib/python3.5/site-packages']
 let g:ycm_extra_conf_vim_data = [
   \  'g:ycm_python_interpreter_path',
   \  'g:ycm_python_sys_path'
