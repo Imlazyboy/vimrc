@@ -244,15 +244,21 @@ Plugin 'honza/vim-snippets'
 let g:ycm_server_python_interpreter='/home/user/project/workshop/py3env/bin/python3'
 
 " YCM python interpreter
-" Global setting way
 let g:ycm_python_interpreter_path = '/home/user/project/workshop/py3env/bin/python3'
-let g:ycm_python_sys_path = ['/home/user/project/workshop/py3env/lib/python3.5/site-packages']
+let g:ycm_python_sys_path = [
+ \   '/home/user/project/workshop/py3env/lib/python3.5/site-packages',
+ \   '/home/user/project/workshop/MxShop',
+ \   '/home/user/project/workshop/MxShop/apps',
+ \   '/home/user/project/workshop/MxShop/extra_apps'
+ \]
 let g:ycm_extra_conf_vim_data = [
   \  'g:ycm_python_interpreter_path',
   \  'g:ycm_python_sys_path'
-  \  ]
-
+  \]
 let g:ycm_global_ycm_extra_conf = '~/global_extra_conf.py'
+" ycm debug调试信息
+let g:ycm_log_level = 'debug'
+
 
 " make YCM compatible with UltiSnips (using supertab)
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
@@ -411,10 +417,3 @@ syntax enable
 "set background=light
 set background=dark
 colorscheme solarized
-
-"" vim-vue
-Plugin 'posva/vim-vue'
-"au BufRead,BufNewFile *.vue set ft=javascript.jsx
-"au BufRead,BufNewFile *.vue set ft=html
-autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript.css
-
